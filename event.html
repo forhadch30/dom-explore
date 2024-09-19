@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Start</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <p id="js-event" class="bg"></p>
+        <h2>This is Event</h2>
+        <button onclick="document.body.style.backgroundColor='green'">Click Me</button>
+        <button onclick="bgRed()">Red</button>
+        <button id="blue">Blue</button>
+        <button id="purple">Purple</button>
+        <button id="makePink">Make Pink</button>
+        <button id="make-Yellow">yellow</button>
+        <button id="make-goldenrod">Make Goldenrod</button>
+        <script>
+            document.getElementById('make-goldenrod').addEventListener('click', function () {
+                document.body.style.backgroundColor = 'goldenrod'
+            })
+        </script>
+    </header>
+    <main>
+        <h2 id="defaultTexts">text is the default</h2>
+        <button onclick="handlerFunction()">Handler function</button>
+        <button id="event-btn">Event listener</button>
+
+        <br><br>
+        <p id="change-text">Text is change</p>
+        <input id="input-value" type="text">
+        <button id="click-update">Click here</button>
+    </main>
+    <script>
+        document.getElementById('click-update').addEventListener('click', function () {
+            const inputField = document.getElementById('input-value');
+            const inputText = inputField.value;
+
+            const changeText = document.getElementById('change-text');
+            changeText.innerText = inputText;
+            inputField.value = ''
+        })
+    </script>
+    <script src="event.js"></script>
+</body>
+
+</html>

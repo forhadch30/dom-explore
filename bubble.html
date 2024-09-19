@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore more event bubble</title>
+    <style>
+        #section-click{
+            border: 2px solid green;
+        }
+        #ul-click{
+            border: 2px solid darkgoldenrod;
+        }
+        #item-3{
+            border: 2px solid deeppink;
+        }
+        #body-click{
+            border: 2px solid darkorchid;
+        }
+    </style>
+</head>
+<body id="body-click">
+    <h1>Explore more event bubble</h1>
+    <section id="section-click">
+        <ul id="ul-click">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Quidem, a?</li>
+            <li id="item-3">Nihil, corporis.</li>
+            <li id="item-4">Incidunt, accusantium!</li>
+            <li id="item-5">Reiciendis, obcaecati.</li>
+            <li id="item-6">Debitis, nemo.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-3').addEventListener('click',function(event){
+            console.log('item 3 click');
+            event.stopImmediatePropagation()
+        })
+        document.getElementById('item-3').addEventListener('click',function(event){
+            console.log('item 3 click');
+            event.stopPropagation()
+        })
+        document.getElementById('item-3').addEventListener('click',function(event){
+            console.log('item 3 click');
+            event.stopPropagation()
+        })
+        document.getElementById('ul-click').addEventListener('click',function(){
+            console.log('ul > li bubble');
+        })
+        document.getElementById('section-click').addEventListener('click',function(){
+            console.log('section bubble');
+        })
+    </script>
+</body>
+</html>

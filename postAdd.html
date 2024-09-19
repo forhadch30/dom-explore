@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change File</title>
+</head>
+
+<body>
+    <div id="postAdd">
+        <h2>Heading Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse aut inventore quod earum molestias rem, quia
+            consequuntur ab aperiam dolorum, officia officiis veritatis architecto ea impedit? Cupiditate error autem
+            ullam.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse aut inventore quod earum molestias rem, quia
+            consequuntur ab aperiam dolorum, officia officiis veritatis architecto ea impedit? Cupiditate error autem
+            ullam.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse aut inventore quod earum molestias rem, quia
+            consequuntur ab aperiam dolorum, officia officiis veritatis architecto ea impedit? Cupiditate error autem
+            ullam.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="30" rows="10"></textarea> <br>
+        <button id="postBtn">Post</button>
+    </div>
+    <script>
+        document.getElementById('postBtn').addEventListener('click',function(){
+            const newComments = document.getElementById('new-comment');
+            const newComment = newComments.value;
+
+            const addingPost = document.getElementById('postAdd');
+            const p = document.createElement('p');
+
+            newComments.value = ''
+            p.innerText = newComment;
+            addingPost.appendChild(p)
+        })
+    </script>
+    <script src="event.js"></script>
+</body>
+
+</html>

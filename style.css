@@ -1,0 +1,14 @@
+.green-bg{
+    text-align: center;
+}
+.large-text{
+    font-size: 2rem;
+}
+.bg{
+    background-color: darkcyan;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 25px;
+    width: 250px;
+}
