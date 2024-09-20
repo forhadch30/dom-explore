@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore more</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p id="delegate" class="delegate-name"></p>
+    <h1>Delegate start</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item">Totam, quibusdam.</li>
+            <li class="item">Rerum, sapiente?</li>
+            <li class="item">Eius, odio?</li>
+            <li class="item">Nihil, temporibus.</li>
+            <li class="item">Necessitatibus, consequuntur!</li>
+        </ul>
+        <button id="btn-add-item">Add items</button>
+    </section>
+    <script>
+        const items = document.getElementsByClassName('item')
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target)
+            })
+        }
+        document.getElementById('btn-add-item').addEventListener('click', function () {
+            const ulAdd = document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText = 'Brand new items';
+            ulAdd.appendChild(li)
+        })
+    </script>
+    <script src="delegate.js"></script>
+</body>
+
+</html>
