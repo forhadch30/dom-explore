@@ -5,3 +5,9 @@ setTime();
 setInterval(() => {
     setTime();
 }, 1000);
+
+
+
+document.getElementById('span').addEventListener('click',function(){
+    
+})
