@@ -9,13 +9,38 @@
 </head>
 
 <body>
-    <div>
+    <div id="counter">
         <h2>Event coding</h2>
-        <p>Count <span id="span">0</span></p>
-        <button id="up">Up</button>
-        <button id="down">down</button>
+        <p>Count: <span id="span">0</span></p>
+        <button id="up">Increase [ + ]</button>
+        <button id="down">Decrease [ - ]</button>
     </div>
+    <!-- <div id="counter">
+        <h2>Event coding</h2>
+        <p>Count: <span id="span">0</span></p>
+        <button onclick="incriments()" id="up">Increase [ + ]</button>
+        <button onclick="dicriment()" id=" down">Decrease [ - ]</button>
+    </div> -->
+    <h2 id="secret">My secret</h2>
+    <input id="input-filed" type="text" placeholder="please type delete">
+    <button id="delete" disabled>Delete</button>
     <script src="delegate.js"></script>
+    <script>
+        document.getElementById('input-filed').addEventListener('keyup', function (event) {
+            const deletes = document.getElementById('delete')
+            const events = event.target.value;
+            if (events === 'delete') {
+                deletes.removeAttribute('disabled')
+            }
+            else {
+                deletes.setAttribute('disabled', true)
+            }
+        })
+        document.getElementById('delete').addEventListener('click', function () {
+            const mySecret = document.getElementById('secret')
+            mySecret.style.display = 'none'
+        })
+    </script>
 </body>
 
 </html>
